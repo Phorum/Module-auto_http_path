@@ -1,0 +1,62 @@
+Changelog:
+----------
+
+2011-03-30 1.0.7
+
+    - Some more updates to make the path detection more robust.
+
+2011-02-20 1.0.6
+
+    - An attempt to fix some strange issue where the http_path is broken
+      (i.e. empty) for Phorum scripts that are run from cron.
+
+    - Updates to the automatic HTTP path generation code, to accomodate
+      for the use of path info in a URL (this makes this module work for
+      URLs like http://site.com/forum/index.php/a/b/c?xyz)
+
+2008-07-30 1.0.5
+
+    - Added compatibility for the $PHORUM['template_http_path'] variable.
+      That one needs some rewriting too, since it's based on the
+      $PHORUM['http_path']. We do not change this variable if some other
+      mod changed it already. In that case, the files might be coming
+      from some CDN.
+
+2008-01-22 1.0.4
+
+    - Fixed a problem with the stub CSS and JavaScript code that this
+      module registers. Winzip did not unpack the zero byte css.tpl.
+      I changed the code to let the module provide the stub code by
+      means of a function instead. That should work in all cases.
+
+      Thanks to Steve Healy for reporting this issue.
+
+2008-01-19 1.0.3
+
+    - Fixed undefined index warning for the css register hook.
+
+    - The http_path is not generated anymore for the admin interface.
+
+    - Added a formatting fixup hook that will rewrite URLs in subjects
+      and bodies that use the original http_path to the dynamic http_path.
+      This is for example needed for the smileys module, which caches the
+      URLs for the smiley images from the admin using the configured
+      http_path.
+
+      Thanks to Steve Healy for reporting these issues.
+
+2008-01-18 1.0.2
+
+    - The module now makes Phorum use the correct URLs in cached
+      CSS and JavaScript code.
+
+2007-12-08 1.0.1
+
+    - Use common_pre hook instead of common.
+
+    - Strip ending slash for the http_path. That is how Phorum expects it.
+
+2007-11-30 1.0.0
+
+    - Initial release
+
