@@ -1,6 +1,10 @@
 Changelog:
 ----------
 
+2011-07-21 1.0.8
+
+    - Even more updates for the path detection in various environments.
+
 2011-03-30 1.0.7
 
     - Some more updates to make the path detection more robust.

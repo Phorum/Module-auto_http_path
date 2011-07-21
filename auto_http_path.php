@@ -24,7 +24,7 @@ function phorum_mod_auto_http_path_common_pre()
                 '', $uri
             );
         }
-        
+
         $PHORUM["http_path"] = preg_match('!/$!', $uri)
                              ? $uri : dirname($uri);
     }
@@ -57,13 +57,17 @@ function phorum_mod_auto_http_path_common_pre()
             );
         }
 
-        $dir = dirname($uri);
+        if ($uri[strlen($uri) - 1] != '/') {
+            $dir = dirname($uri);
+        } else {
+            $dir = $uri;
+        }
 
         $PHORUM["http_path"] = $protocol.'://'.$host.$port.$dir;
     }
 
     $PHORUM['http_path'] = preg_replace('!/$!', '', $PHORUM['http_path']);
-                             
+
     // Change template_http_path that one depends on the original http_path.
     if (isset($PHORUM['template_http_path'])) {
         $origq = preg_quote(preg_replace(
