@@ -1,5 +1,6 @@
 title: Automatic HTTP Path
 desc:  This module automatically sets the HTTP Path configuration option, based on the active URL. This can be useful if for some reason you run one Phorum install under various host names and/or directories (e.g. a Phorum on a private space intranet server that is also accessible through a public URL or a server that has to be accessible on both an http:// and https:// URL).
+author: Maurice Makaay <maurice@phorum.org>
 version: 1.0.8
 url: http://www.phorum.org/phorum5/read.php?62,125914,125914#msg-125914
 category: admin
